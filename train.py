@@ -100,4 +100,9 @@ rf.fit(X_train, y_train)
 #Test The Model 
 y_predRF = rf.predict(X_test)
 
+#Saving the Model
+import pickle
+pickle.dump(rf, open('model.pkl', 'wb'))
+
+model = pickle.load(open('model.pkl', 'rb'))
 
