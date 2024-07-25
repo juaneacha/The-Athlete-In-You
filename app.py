@@ -46,19 +46,24 @@ def predict():
     height = int_features[0]
     weight = int_features[1]
     team = int_features[5]
-    year = 1995
+    year = float(2016)
     season = int_features[4]
 
-    from sklearn.preprocessing import StandardScaler
-    sc = StandardScaler
+   # from sklearn.preprocessing import StandardScaler
+  #  sc = StandardScaler
 
-    features = [sc.transform(np.array([sex, age, height, weight, team, year, season]))]  #Convert to the form [[a, b, c, ...]] for input to the model
+    features = [np.array([sex, age, height, weight, team, year, season])]  #Convert to the form [[a, b, c, ...]] for input to the model
+
+    print(features)
+
+
 
     prediction = model.predict(features)  # features Must be in the form [a, b, c, ...]
 
     output = round(prediction[0], 2)
+    print(output)
 
-    return render_template('temp-results-page.html')#, sport_to_play ='The Sport You Were Suppused to Play Was: {}'.format(output))
+    return render_template('results_page.html')#, sport_to_play ='The Sport You Were Suppused to Play Was: {}'.format(output))
 
 
 #When the Python interpreter reads a source file, it first defines a few special variables. 

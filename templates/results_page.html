@@ -140,68 +140,34 @@ button {
   text-align: center;
 }
 
-/* form */
-
-form {
-  background: var(--color-darkblue-alpha);
-  padding: 2.5rem 0.625rem;
-  border-radius: 0.25rem;
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (min-width: 480px) {
-  form {
-    padding: 2.5rem;
-  }
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
 }
 
-.form-group {
-  margin: 0 auto 1.25rem auto;
-  padding: 0.25rem;
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
 }
 
-.form-control {
-  display: block;
-  width: 100%;
-  height: 2.375rem;
-  padding: 0.375rem 0.75rem;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
 }
 
-.form-control:focus {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.input-radio,
-.input-checkbox {
-  display: inline-block;
-  margin-right: 0.625rem;
-  min-height: 1.25rem;
-  min-width: 1.25rem;
-}
-
-.input-textarea {
-  min-height: 120px;
-  width: 100%;
-  padding: 0.625rem;
-  resize: vertical;
-}
-
-.submit-button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--color-green);
-  color: inherit;
-  border-radius: 2px;
-  cursor: pointer;
-}
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 </style>
 
   <script>
@@ -218,73 +184,12 @@ form {
     <h1 id="title" class="text-center">What Sport Was Your Body Meant To Play?</h1>
     
   </header>
-  <form id="survey-form">
-    <div class="form-group">
-      <label id="name-label" for="name">Height</label>
-      <input type="text" name="height" id="height" class="form-control" placeholder="Please Enter Your Height (In CM)" required="">
-    </div>
-    <div class="form-group">
-      <label id="email-label" for="email">Weight</label>
-      <input type="text" name="weight" id="weight" class="form-control" placeholder="Please Enter Your Weight (In KG)" required="">
-    </div>
-    <div class="form-group">
-      <label id="number-label" for="number">Age</label>
-      <input type="number" name="age" id="age" min="10" max="99" class="form-control" placeholder="Age">
-    </div>
-    <div class="form-group">
-      <p>Sex Assigned at Birth</p>
-      <select id="dropdown" name="sex" class="form-control" required="">
-        <option disabled selected value>Please Select One</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        
-        
-        
-      </select>
-    </div>
-
-    <div class="form-group">
-      <p>Season</p>
-      <label>
-        <input name="season" value="Summer" type="radio" class="input-radio" checked="">Summer</label>
-      <label>
-        <input name="season" value="Winter" type="radio" class="input-radio">Winter</label>
-
-      
-    </div>
-
-    <div class="form-group">
-      <p>
-What Team Would You Like To Be In?</p>
-      <select id="team" name="team" class="form-control" required="">
-        <option disabled="" selected="" value="">Select an option</option>
-        <option value="7">United States</option>
-        <option value="1">West Germany</option>
-        <option value="2">Russia</option>
-        <option value="3">Japan</option>
-        <option value="4">Italy</option>
-        <option value="5">Poland</option>
-        <option value="6">Austria</option>
-        <option value="0">Netherlands</option>
-        <option value="8">Yugoslavia</option>
-        <option value="9">Norway</option>
-        <option value="other">Other</option>
-    </select>
-    </div>
-
-    
-
-    <div class="form-group">
-      <p>If Other</p>
-      <textarea id="comments" class="input-textarea" name="team" placeholder="Please Enter Other Team Name"></textarea>
-    </div>
-
-    <div class="form-group">
-      <button type="submit" id="submit" class="submit-button">
-        What's My Sport?
-      </button>
-    </div>
-  </form>
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
+  </div>
+</div>
 </div>
 
   
