@@ -40,12 +40,14 @@ def home():
 def predict():
 
     int_features = [float(x) for x in request.form.values()] #Convert string inputs to float.
+    print(int_features)
     features = [np.array(int_features)]  #Convert to the form [[a, b, c, ...]] for input to the model
+    print(features)
     prediction = model.predict(features)  # features Must be in the form [a, b, c, ...]
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='The Sport You Were Suppused to Play Was: {}'.format(output))
+    return render_template('index.html', height='The Sport You Were Suppused to Play Was: {}'.format("Hello"))
 
 
 #When the Python interpreter reads a source file, it first defines a few special variables. 
