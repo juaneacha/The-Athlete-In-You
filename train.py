@@ -20,9 +20,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 
 #LOADING DATA
-df1 = pd.read_csv("D://Download//athlete_events.csv")#, index_col = True)
+df1 = pd.read_csv("C://Users//el_ju//Downloads//athlete_events.csv")#, index_col = True)
 df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Year', 'Season']]
-
 
 
 #CLEANING DATA

@@ -40,14 +40,25 @@ def home():
 def predict():
 
     int_features = [float(x) for x in request.form.values()] #Convert string inputs to float.
-    print(int_features)
-    features = [np.array(int_features)]  #Convert to the form [[a, b, c, ...]] for input to the model
-    print(features)
+    #"Sex","Age","Height","Weight","Team","Year","Season"
+    sex = int_features[3]
+    age = int_features[2]
+    height = int_features[0]
+    weight = int_features[1]
+    team = int_features[5]
+    year = 1995
+    season = int_features[4]
+
+    from sklearn.preprocessing import StandardScaler
+    sc = StandardScaler
+
+    features = [sc.transform(np.array([sex, age, height, weight, team, year, season]))]  #Convert to the form [[a, b, c, ...]] for input to the model
+
     prediction = model.predict(features)  # features Must be in the form [a, b, c, ...]
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', height='The Sport You Were Suppused to Play Was: {}'.format("Hello"))
+    return render_template('temp-results-page.html')#, sport_to_play ='The Sport You Were Suppused to Play Was: {}'.format(output))
 
 
 #When the Python interpreter reads a source file, it first defines a few special variables. 

@@ -218,7 +218,7 @@ form {
     <h1 id="title" class="text-center">What Sport Was Your Body Meant To Play?</h1>
     
   </header>
-  <form id="survey-form">
+  <form action="{{ url_for('predict')}}" method="post" id="survey-form">
     <div class="form-group">
       <label id="name-label" for="name">Height</label>
       <input type="text" name="height" id="height" class="form-control" placeholder="Please Enter Your Height (In CM)" required="">
@@ -235,8 +235,8 @@ form {
       <p>Sex Assigned at Birth</p>
       <select id="dropdown" name="sex" class="form-control" required="">
         <option disabled selected value>Please Select One</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+        <option value=0>Male</option>
+        <option value=1>Female</option>
         
         
         
@@ -246,9 +246,9 @@ form {
     <div class="form-group">
       <p>Season</p>
       <label>
-        <input name="season" value="Summer" type="radio" class="input-radio" checked="">Summer</label>
+        <input name="season" value=0 type="radio" class="input-radio" checked="">Summer</label>
       <label>
-        <input name="season" value="Winter" type="radio" class="input-radio">Winter</label>
+        <input name="season" value=1 type="radio" class="input-radio">Winter</label>
 
       
     </div>
@@ -258,16 +258,16 @@ form {
 What Team Would You Like To Be In?</p>
       <select id="team" name="team" class="form-control" required="">
         <option disabled="" selected="" value="">Select an option</option>
-        <option value="7">United States</option>
-        <option value="1">West Germany</option>
-        <option value="2">Russia</option>
-        <option value="3">Japan</option>
-        <option value="4">Italy</option>
-        <option value="5">Poland</option>
-        <option value="6">Austria</option>
-        <option value="0">Netherlands</option>
-        <option value="8">Yugoslavia</option>
-        <option value="9">Norway</option>
+        <option value=7>United States</option>
+        <option value=1>West Germany</option>
+        <option value=2>Russia</option>
+        <option value=3>Japan</option>
+        <option value=4>Italy</option>
+        <option value=5>Poland</option>
+        <option value=6>Austria</option>
+        <option value=0>Netherlands</option>
+        <option value=8>Yugoslavia</option>
+        <option value=9>Norway</option>
         <option value="other">Other</option>
     </select>
     </div>
