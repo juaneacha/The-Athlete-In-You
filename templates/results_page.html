@@ -67,13 +67,12 @@ body::before {
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 70%;
   line-height: 1.2;
+  font-size:400%
 }
 
-p {
-  font-size: 1.125rem;
-}
+
 
 h1,
 p {
@@ -90,12 +89,12 @@ label {
 
 .text-container {
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   background-color: rgb(0, 0, 0);
   opacity: .5;
-  width: 25%;
-  height: 25%;
+  height:100%;
+  width:100%;
 }
 
 </style>
@@ -110,11 +109,13 @@ label {
 
 <body translate="no" data-new-gr-c-s-check-loaded="14.1188.0" data-gr-ext-installed="">
   <div class="text-container">
-     <header class="header">
-        <h1 id="title" class="text-center">What Sport Was Your Body Meant To Play?</h1>
+     <div>
+        <h1 id="title">{{sport_to_play}}</h1>
     
-      </header>
+     </div>
   </div>
+
+  
 
   
 

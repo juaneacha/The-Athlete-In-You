@@ -20,7 +20,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 
 #LOADING DATA
-df1 = pd.read_csv("C://Users//el_ju//Downloads//athlete_events.csv")#, index_col = True)
+df1 = pd.read_csv("D://Download//athlete_events.csv")#, index_col = True)
 df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Year', 'Season']]
 
 
@@ -81,10 +81,10 @@ x= df.drop(['Sport'], axis = 1)#_net.iloc[:, -1].values
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, random_state = True)
 
 
-# Scale dataset
+"""# Scale dataset
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+X_test = sc.transform(X_test)"""
 
 
 #Random Forest
