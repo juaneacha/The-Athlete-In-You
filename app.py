@@ -44,20 +44,27 @@ def predict():
        'Biathlon', 'Gymnastics', 'Alpine Skiing', 'Wrestling', 'Rowing',
        'Athletics', 'Swimming', 'Football', 'Shooting', 'Boxing',
        'Fencing', 'Canoeing', 'Cycling', 'Hockey']
+    
+
+    try:
+        tempHeight = str(int_features[0])
+        tempHeight = ((float(tempHeight[0])*12) + float(tempHeight[1:])) * 2.54 
+    except(ValueError):
+        tempHeight += 0
 
     sex = int_features[3]
     age = int_features[2]
-    height = int_features[0]
-    weight = int_features[1]
+    height = tempHeight
+    weight = (int_features[1])/(2.205)
     team = int_features[5]
-    year = float(2016)
     season = int_features[4]
 
-    features = [np.array([sex, age, height, weight, team, year, season])]  #Convert to the form [[a, b, c, ...]] for input to the model
+    features = [np.array([sex, age, height, weight, team, season])]  #Convert to the form [[a, b, c, ...]] for input to the model
+    print(features)
     prediction = model.predict(features)  # features Must be in the form [a, b, c, ...]
     output = round(prediction[0], 2)
 
-    return render_template('results_page.html', sport_to_play ='Your Body Was Meant To Play  {}'.format(sports[int(output)]))
+    return render_template('results_page.html', sport_to_play ='Your Body Was Meant For  {}'.format(sports[int(output)]))
 
 
 #When the Python interpreter reads a source file, it first defines a few special variables. 

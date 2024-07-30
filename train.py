@@ -20,8 +20,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 
 #LOADING DATA
-df1 = pd.read_csv("D://Download//athlete_events.csv")#, index_col = True)
-df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Year', 'Season']]
+df1 = pd.read_csv("D://Download//athlete_events.csv") #Source: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
+df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Season']]
 
 
 #CLEANING DATA
@@ -73,8 +73,8 @@ convertRespToInt(df, 'Team')
 #MACHINE LEARNING MODELING
 
 # Split data into dependent/independent variables
-y= df['Sport']#_net.iloc[:, :-1].values
-x= df.drop(['Sport'], axis = 1)#_net.iloc[:, -1].values
+y= df['Sport']
+x= df.drop(['Sport'], axis = 1)
 
 
 # Split data into test/train set
