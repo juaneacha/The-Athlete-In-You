@@ -46,7 +46,7 @@ def predict():
        'Fencing', 'Canoeing', 'Cycling', 'Hockey']
     
 
-    try:
+    try: #Converts height from ft to cm
         tempHeight = str(int_features[0])
         tempHeight = ((float(tempHeight[0])*12) + float(tempHeight[1:])) * 2.54 
     except(ValueError):
