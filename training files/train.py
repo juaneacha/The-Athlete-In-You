@@ -87,7 +87,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)"""
 
 
-#Random Forest
+"""#Random Forest
 from sklearn.ensemble import RandomForestClassifier
 
 #Create Random Forest Classifier
@@ -97,11 +97,21 @@ rf = RandomForestClassifier()
 rf.fit(X_train, y_train)
 
 #Test The Model 
-y_predRF = rf.predict(X_test)
+y_predRF = rf.predict(X_test)"""
+
+
+#Decision Tree
+from sklearn.tree import DecisionTreeClassifier
+# Create Decision Tree classifer object
+clf = DecisionTreeClassifier()
+
+# Train Decision Tree Classifer
+clf = clf.fit(X_train,y_train)
+
 
 #Saving the Model
 import pickle
-pickle.dump(rf, open('model.pkl', 'wb'))
+pickle.dump(clf, open('testmodel.pkl', 'wb'))
 
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('testmodel.pkl', 'rb'))
 
