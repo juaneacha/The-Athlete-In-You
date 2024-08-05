@@ -29,7 +29,7 @@ model = pickle.load(open('models/testmodel.pkl', 'rb'))
 #use the route() decorator to tell Flask what URL should trigger our function.
 @app.route('/')
 def home():
-    return render_template('temp-results-page.html')
+    return render_template('index.html')
 
 #You can use the methods argument of the route() decorator to handle different HTTP methods.
 #GET: A GET message is send, and the server returns data
