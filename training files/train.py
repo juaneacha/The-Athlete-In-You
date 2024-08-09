@@ -1,10 +1,5 @@
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 import numpy as np
-import random
-from matplotlib.colors import ListedColormap
-import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -27,11 +22,11 @@ df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Season']]
 #CLEANING DATA
 
 # Identify the outliers
-outliers = np.where(np.abs(df1 - df1.mean()) > 3 * df1.std())[0]
+#outliers = np.where(np.abs(df1 - df1.mean()) > 3 * df1.std())[0]
 
 # Remove the outliers
-df1 = df1.drop(outliers)
-df1 = df1.reset_index(drop=True)
+#df1 = df1.drop(outliers)
+#df1 = df1.reset_index(drop=True)
 
 #Imputation and removable of NA
 df1['Team'] = df1['Team'].fillna('No Team')
