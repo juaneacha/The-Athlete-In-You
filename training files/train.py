@@ -77,11 +77,8 @@ df = bal_df
 y= df['Sport']
 x= df.drop(['Sport'], axis = 1)
 
-print(x)
-
 # Split data into test/train set
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, random_state = True)
-
 
 # Scale dataset
 sc = StandardScaler()
