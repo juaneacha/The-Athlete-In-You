@@ -18,7 +18,7 @@ import pickle
 app = Flask(__name__)
 
 #Load the trained model. (Pickle file)
-model = pickle.load(open('models/model.pkl', 'rb'))
+model = pickle.load(open('models/model_dt.pkl', 'rb'))
 
 #Define the route to be home. 
 #The decorator below links the relative route of the URL to the function it is decorating.
@@ -64,6 +64,7 @@ def predict():
     prediction = model.predict(features)  # features Must be in the form [a, b, c, ...]
     output = round(prediction[0], 2)
 
+    print(output)
     return render_template('results_page.html', sport_to_play ='Your Body Was Meant For  {}'.format(sports[int(output)]))
 
 
