@@ -39,7 +39,6 @@ convertRespToInt(df, 'Sport')
 convertRespToInt(df, 'Season')
 convertRespToInt(df, 'Team')
 
-
 #Dropping Outliers
 def drop_outliers_IQR(df):
 
@@ -57,6 +56,19 @@ def drop_outliers_IQR(df):
 
 df = drop_outliers_IQR(df)
 
+
+#Balancing of classes
+bal_df = pd.DataFrame()
+sport_series = df['Sport'].unique()
+
+for s in sport_series:
+    try:
+        temp_df = df[df['Sport'] == s].sample(4000)
+        bal_df = pd.concat([bal_df, temp_df])
+    except:
+        continue
+
+df = bal_df
 
 
 #MACHINE LEARNING MODELING
@@ -76,30 +88,27 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 
-#Random Forest
+"""#Random Forest
 from sklearn.ensemble import RandomForestClassifier
 
 #Create Random Forest Classifier
 rf = RandomForestClassifier()
 
 #Train The Model
-rf.fit(X_train, y_train)
-
-#Test The Model 
-y_predRF = rf.predict(X_test)
+rf.fit(X_train, y_train)"""
 
 
-"""#Decision Tree
+#Decision Tree
 from sklearn.tree import DecisionTreeClassifier
 # Create Decision Tree classifer object
 clf = DecisionTreeClassifier()
 
 # Train Decision Tree Classifer
-clf = clf.fit(X_train,y_train)"""
+clf = clf.fit(X_train,y_train)
 
 
 #Saving the Model
 import pickle
-pickle.dump(rf, open('model.pkl', 'wb'))
+pickle.dump(clf, open('model.pkl', 'wb'))
 
 #model = pickle.load(open('model.pkl', 'rb'))
