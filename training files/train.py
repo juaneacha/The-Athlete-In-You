@@ -50,12 +50,11 @@ def drop_outliers_IQR(df):
 
    not_outliers = df[~((df<(q1-1.5*IQR)) | (df>(q3+1.5*IQR)))]
 
-   outliers_dropped = not_outliers.dropna().reset_index()
+   outliers_dropped = not_outliers.dropna()
 
    return outliers_dropped
 
 df = drop_outliers_IQR(df)
-
 
 #Balancing of classes
 bal_df = pd.DataFrame()
@@ -71,12 +70,14 @@ for s in sport_series:
 df = bal_df
 
 
+
 #MACHINE LEARNING MODELING
 
 # Split data into dependent/independent variables
 y= df['Sport']
 x= df.drop(['Sport'], axis = 1)
 
+print(x)
 
 # Split data into test/train set
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, random_state = True)
@@ -95,8 +96,8 @@ from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier()
 
 #Train The Model
-rf.fit(X_train, y_train)"""
-
+rf.fit(X_train, y_train)
+"""
 
 #Decision Tree
 from sklearn.tree import DecisionTreeClassifier
@@ -107,8 +108,9 @@ clf = DecisionTreeClassifier()
 clf = clf.fit(X_train,y_train)
 
 
+
 #Saving the Model
 import pickle
-pickle.dump(clf, open('model.pkl', 'wb'))
+pickle.dump(clf, open('model_dt.pkl', 'wb'))
 
 #model = pickle.load(open('model.pkl', 'rb'))
