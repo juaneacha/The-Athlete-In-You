@@ -15,36 +15,12 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import f1_score
 
 #LOADING DATA
-df1 = pd.read_csv("D://Download//athlete_events.csv") #Source: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
-df1 = df1.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Season']]
-
-
-#CLEANING DATA
-
-# Identify the outliers
-#outliers = np.where(np.abs(df1 - df1.mean()) > 3 * df1.std())[0]
-
-# Remove the outliers
-#df1 = df1.drop(outliers)
-#df1 = df1.reset_index(drop=True)
+df = pd.read_csv("D://Download//athlete_events.csv") #Source: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
+df = df.loc[:,['Sex','Age', 'Height', 'Weight', 'Sport', 'Team', 'Season']]
 
 #Imputation and removable of NA
-df1['Team'] = df1['Team'].fillna('No Team')
-df = df1
+df['Team'] = df['Team'].fillna('No Team')
 df = df.dropna()
-
-#Balancing of classes
-bal_df = pd.DataFrame()
-sport_series = df['Sport'].unique()
-
-for s in sport_series:
-    try:
-        temp_df = df[df['Sport'] == s].sample(4000)
-        bal_df = pd.concat([bal_df, temp_df])
-    except:
-        continue
-
-df = bal_df
 
 #Casting Strings to Int
 def convertRespToInt(df, feature):
@@ -64,6 +40,24 @@ convertRespToInt(df, 'Season')
 convertRespToInt(df, 'Team')
 
 
+#Dropping Outliers
+def drop_outliers_IQR(df):
+
+   q1=df.quantile(0.25)
+
+   q3=df.quantile(0.75)
+
+   IQR=q3-q1
+
+   not_outliers = df[~((df<(q1-1.5*IQR)) | (df>(q3+1.5*IQR)))]
+
+   outliers_dropped = not_outliers.dropna().reset_index()
+
+   return outliers_dropped
+
+df = drop_outliers_IQR(df)
+
+
 
 #MACHINE LEARNING MODELING
 
@@ -76,13 +70,13 @@ x= df.drop(['Sport'], axis = 1)
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, random_state = True)
 
 
-"""# Scale dataset
+# Scale dataset
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)"""
+X_test = sc.transform(X_test)
 
 
-"""#Random Forest
+#Random Forest
 from sklearn.ensemble import RandomForestClassifier
 
 #Create Random Forest Classifier
@@ -92,21 +86,20 @@ rf = RandomForestClassifier()
 rf.fit(X_train, y_train)
 
 #Test The Model 
-y_predRF = rf.predict(X_test)"""
+y_predRF = rf.predict(X_test)
 
 
-#Decision Tree
+"""#Decision Tree
 from sklearn.tree import DecisionTreeClassifier
 # Create Decision Tree classifer object
 clf = DecisionTreeClassifier()
 
 # Train Decision Tree Classifer
-clf = clf.fit(X_train,y_train)
+clf = clf.fit(X_train,y_train)"""
 
 
 #Saving the Model
 import pickle
-pickle.dump(clf, open('testmodel.pkl', 'wb'))
+pickle.dump(rf, open('model.pkl', 'wb'))
 
-model = pickle.load(open('testmodel.pkl', 'rb'))
-
+#model = pickle.load(open('model.pkl', 'rb'))
