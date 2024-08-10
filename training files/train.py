@@ -110,4 +110,4 @@ clf = clf.fit(X_train,y_train)
 import pickle
 pickle.dump(clf, open('model_dt.pkl', 'wb'))
 
-#model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
