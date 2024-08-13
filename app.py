@@ -40,10 +40,12 @@ def home():
 def predict():
 
     int_features = [float(x) for x in request.form.values()] #Convert string inputs to float.
-    sports = ['Speed Skating', 'Cross Country Skiing', 'Ice Hockey', 'Sailing',
-       'Biathlon', 'Gymnastics', 'Alpine Skiing', 'Wrestling', 'Rowing',
-       'Athletics', 'Swimming', 'Football', 'Shooting', 'Boxing',
-       'Fencing', 'Canoeing', 'Cycling', 'Hockey']
+    sports = ['Basketball', 'Judo', 'Badminton', 'Sailing', 'Gymnastics', 'Wrestling', 'Rowing',
+              'Athletics', 'Swimming', 'Football', 'Equestrianism', 'Shooting', 'Taekwondo',
+              'Boxing', 'Weightlifting', 'Fencing', 'Diving', 'Canoeing', 'Handball', 'Water Polo',
+              'Tennis', 'Cycling', 'Hockey', 'Softball', 'Volleyball', 'Synchronized Swimming', 
+              'Modern Pentathlon', 'Table Tennis', 'Baseball', 'Rhythmic Gymnastics', 'Rugby Sevens', 
+              'Archery', 'Trampolining', 'Beach Volleyball', 'Ice Hockey', 'Figure Skating']
     
 
     try: #Converts height from ft to cm

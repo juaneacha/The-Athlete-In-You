@@ -32,7 +32,6 @@ def convertRespToInt(df, feature):
         i += 1
 
     df[feature] = df[feature].astype(float)
-    df[feature].unique()
 
 convertRespToInt(df, 'Sex')
 convertRespToInt(df, 'Sport')
@@ -110,4 +109,17 @@ clf = clf.fit(X_train,y_train)
 import pickle
 pickle.dump(clf, open('models/model_dt.pkl', 'wb'))
 
-#model = pickle.load(open('models/model_dt.pkl', 'rb'))
+model = pickle.load(open('models/model_dt.pkl', 'rb'))
+
+# Prediction
+y_pred = model.predict(X_test)
+
+# Accuracy
+accuracy_score(y_test, y_pred)
+
+# Classification report
+print(f'Classification Report: \n{classification_report(y_test, y_pred)}')
+
+# F1 score
+print(f"F1 Score : {f1_score(y_test, y_pred, average=None)}")
+
