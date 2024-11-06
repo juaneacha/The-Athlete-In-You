@@ -5,18 +5,16 @@
 ## Introduction
 
 The olympics is one of those events that has grown in viewership in recent years. However, an effective way to increase viewership is through increasing engagement. A website that can tell one’s ability to play in any of the olympic sports can increase engagement by up to 52.6% (Barreto).
-
----- 
+ 
 **Concepts applied:**
-Concepts Applied
-    - Classification Modeling: Naive Bayes, Decision Trees, Random Forest
-    - Model Deployment: Heroku, Flask, HTML
+- Classification Modeling: Naive Bayes, Decision Trees, Random Forest
+- Model Deployment: Heroku, Flask, HTML
 
 ----
 ## Problem Statement
-    - How to increase the Olympic’s average viewership?
-    - How to make Olympic viewers more invested in the sports?
-    - How to bring more awareness to the different sports and teams?
+- How to increase the Olympic’s average viewership?
+- How to make Olympic viewers more invested in the sports?
+- How to bring more awareness to the different sports and teams?
  
  ---- 
 ## Data Collection and Cleaning
