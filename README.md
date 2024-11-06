@@ -52,9 +52,9 @@ The olympics is one of those events that has grown in viewership in recent years
 
 ----    
 ## Conclusion and Recommendations 
-    - A ML model that can predict which type of sport your body is suited for is an effective way for increasing engagement up to 52.6% (Barreto) 
-    - Small to medium ML models are critical for effective deployment on the web
-    - The Decision Tree Algorithm is the best algorithm to deploy on the web. This is because it performs very similar to the best algorithms created on this project while being a fraction of the size. This two components reliable performance and size are what make Decision Tree an ideal candidate for web deployment
+- A ML model that can predict which type of sport your body is suited for is an effective way for increasing engagement up to 52.6% (Barreto) 
+- Small to medium ML models are critical for effective deployment on the web
+- The Decision Tree Algorithm is the best algorithm to deploy on the web. This is because it performs very similar to the best algorithms created on this project while being a fraction of the size. This two components reliable performance and size are what make Decision Tree an ideal candidate for web deployment
 
 
 
