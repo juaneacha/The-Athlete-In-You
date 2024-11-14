@@ -20,7 +20,8 @@ The Olympics is one of those sports shows that has grown in viewership in recent
 ## Data Collection and Cleaning
 - Data Collection
     - The dataset used for this project was originally created and posted on Kaggle by Randi Griffin. The dataset is a compilation of 120 years of Olympic history. It contains 15 features and 271116 rows. Some of the features include weight, height, age, sport, placement, and so on. The file of this dataset can be found at: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
-- Include the image of the dataset
+- Raw Data Snapshot
+    -  ![](athdata.png)
 - Data Cleaning
     - Data points are evaluated for correctness, datatypes, and overall
     - uniformity
