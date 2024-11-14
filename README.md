@@ -1,6 +1,6 @@
 # The Athlete In You: Increasing Engagement For The Olympic Games
 
-![](data.jpeg)
+![](TAY.png)
 
 ## Introduction
 
