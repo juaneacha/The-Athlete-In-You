@@ -2,7 +2,7 @@
 
 ![](TAY.png)
 <p align="center">
- <a href="https://the-athlete-in-you-a80cad41e1f9.herokuapp.com/" target="_blank">Figure Out The Athlete In You Now!</a>
+ <a href="https://the-athlete-in-you-a80cad41e1f9.herokuapp.com/" target="_blank">Find Out More About The Athlete In You Now!</a>
 </p>
 ## Introduction
 
