@@ -4,7 +4,8 @@
 <p align="center">
  <a href="https://the-athlete-in-you-a80cad41e1f9.herokuapp.com/" target="_blank">Find Out More About The Athlete In You Now!</a>
 </p>
-## Introduction
+
+# Introduction
 
 The Olympics is one of those sports shows that has grown in viewership in recent years. Moreover, this newfound growth needs constant work to continue to improve. To that end, an effective way to keep and increase viewership is through increasing engagement. A website that can tell one’s ability to play in any of the Olympic sports can increase engagement by up to 52.6% (Barreto).
  
