@@ -2,7 +2,7 @@
 
 ![](TAY.png)
 <p align="center">
-[Try It Out Now!](https://the-athlete-in-you-a80cad41e1f9.herokuapp.com/)
+ <a href="https://the-athlete-in-you-a80cad41e1f9.herokuapp.com/" target="_blank">Try It Out Now!</a>
 </p>
 ## Introduction
 
