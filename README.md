@@ -40,7 +40,7 @@ The Olympics is one of those sports shows that has grown in viewership in recent
     - Models Evaluation
         - Confusion Matrix
             ![](Confusion.png)
-        - More Performance Metrics
+        - Other Performance Metrics
             ![](algoper.png)
 - Model Results
     - Random forest is the best algorithm out of the three. This is gleaned from the confusion matrix comparison and its precision, sensitivity, and F1-score results. In the confusion matrix comparison, random forest shows better classification performance compared to decision trees and random forest. This is shown in its uniform diagonal line where most of the observations fall in their right category. This is not the case for algorithms like naive Bayes where most of the observations are scattered outside of this diagonal line, showing lack of overall correctness. This is also observed in naive Bayes’ precision, sensitivity, and F1-score results where it shows the lowest score by a significant margin when compared to the random forest and decision tree. Speaking of decision trees, this algorithm performs similarly to random forest in most measures. It only shows a small drop in performance across the board when compared to random forest.
