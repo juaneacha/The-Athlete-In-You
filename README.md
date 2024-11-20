@@ -7,7 +7,7 @@
 
 # Introduction
 
-The Olympics is one of those sports shows that has grown in viewership in recent years. Moreover, this newfound growth needs constant work to continue to improve. To that end, an effective way to keep and increase viewership is through increasing engagement. A website that can tell one’s ability to play in any of the Olympic sports can increase engagement by up to 52.6% (Barreto).
+The Olympics is one of those sports shows that has grown in viewership in recent years. Moreover, this newfound growth needs constant work to continue to improve. To that end, an effective way to keep and increase viewership is through increasing engagement. A website that can tell one’s ability to play in any of the Olympic sports can increase engagement by up to 52.6% <a href="https://www.forbes.com/sites/forbescontentmarketing/2024/06/20/engage-your-audience-with-interactive-content/" target="_blank">(Barreto)</a>.
  
 **Concepts applied:**
 - Classification Modeling: Naive Bayes, Decision Trees, Random Forest
