@@ -26,8 +26,7 @@ The Olympics is one of those sports shows that has grown in viewership in recent
 - Raw Data Snapshot
     -  ![](athdata.png)
 - Data Cleaning
-    - Data points are evaluated for correctness, datatypes, and overall
-    - uniformity
+    - Data points are evaluated for correctness, datatypes, and overall uniformity
     - Outliers are dropped from the dataset
     - Null values are imputed and dropped when needed
 
